@@ -5,7 +5,7 @@
     </h3>
     <p class="title is-size-5 has-text-left has-text-weight-bold" style="margin: 1rem 0;">Have access to</p>
     <div class="columns is-multiline">
-      <div class="column is-full" v-for="card in cards">
+      <div class="column is-full" v-for="card in cards" :key="card.text">
         <div class="card" style="background-color: #f5fbf9;">
           <div class="card-content">
             <div class="columns">

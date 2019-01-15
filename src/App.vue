@@ -2,13 +2,36 @@
   <div id="app">
     <navbar></navbar>
     <router-view/>
+    <div class="modal" :class="[showModal ? 'is-active': '']">
+      <div class="modal-background"></div>
+      <component :is="modalComponent" @close="showModal = false; modalComponent=''"></component>
+    </div>
   </div>
 </template>
 <script>
 import Navbar from './components/Navbar.vue'
+import {EventBus} from './event-bus.js'
 export default {
   components: {
     "navbar": Navbar,
+    "login": () => import('./components/Login.vue'),
+    "register": () => import('./components/Register.vue'),
+  },
+  data: function(){
+    return {
+      showModal: false,
+      modalComponent: "",
+    }
+  },
+  mounted() {
+    EventBus.$on('create-modal', (component) => {
+      if(this.showModal){
+        this.modalComponent = "";
+        this.showModal = false;
+      }
+      this.modalComponent = component;
+      this.showModal = true;
+    })
   }
 }
 </script>

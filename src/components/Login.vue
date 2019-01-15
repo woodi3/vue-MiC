@@ -12,12 +12,12 @@
             :class="[valid ? '' : 'is-danger']"
             type="text"
             required
-            placeholder="Username or email"
-            v-model.trim="user.usernameOrEmail">
+            placeholder="Email address"
+            v-model.trim="user.email">
           <span class="icon is-small is-left">
             <i class="fas fa-user"></i>
           </span>
-          <p class="help is-danger">{{valid ? "" : "Please enter a valid username or email address"}}</p>
+          <p class="help is-danger">{{valid ? "" : "Please enter a valid email address"}}</p>
         </div>
       </div>
       <div class="field">
@@ -52,7 +52,7 @@ export default {
   data: function(){
     return {
       user: {
-        usernameOrEmail: "",
+        email: "",
         password: ""
       },
       loading: false,
@@ -70,7 +70,7 @@ export default {
   },
   computed: {
     loginCheck(){
-      return this.user.usernameOrEmail === "" || this.user.password ===""
+      return this.user.email === "" || this.user.password ===""
     }
   },
 }

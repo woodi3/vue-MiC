@@ -14,7 +14,7 @@
             Join a network determined to help you.
           </p>
           <!-- create register modal -->
-          <a class="button is-primary is-outlined is-large" style="margin-top: 1rem">Join us now!</a>
+          <a class="button is-primary is-large" style="margin-top: 1rem" @click="showModal('register')">Join us now!</a>
         </div>
       </div>
     </div>
@@ -22,11 +22,16 @@
 </template>
 
 <script>
-
+import { EventBus } from '@/event-bus.js'
 export default {
   name: 'banner',
   components: {
-  }
+  },
+  methods: {
+    showModal(component){
+      EventBus.$emit('create-modal', component);
+    }
+  },
 }
 </script>
 

@@ -24,6 +24,7 @@
         </div>
       </div>
     </div>
+    <team-widget></team-widget>
     <div class="hero is-small" style="background-color: #0ea077">
       <div class="hero-body">
         <div class="container">
@@ -43,12 +44,14 @@
 import Banner from '@/components/Banner.vue'
 import About from '@/components/About.vue'
 import StudentsWidget from '@/components/StudentsWidget.vue'
+import TeamWidget from '@/components/TeamWidget.vue'
 export default {
   name: 'home',
   components: {
     "banner": Banner,
     "about-widget": About,
     "students-widget": StudentsWidget,
+    "team-widget": TeamWidget,
   },
 }
 </script>
