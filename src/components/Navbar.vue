@@ -1,0 +1,74 @@
+<template>
+  <nav class="navbar has-background-transparent" role="navigation" aria-label="main navigation" style="padding: 3rem">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+      </a>
+      <a role="button"
+      class="navbar-burger burger"
+      :class="[showMenu ? 'is-active' : '']"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarObjects"
+      @click="showMenu = !showMenu;">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarObjects" class="navbar-menu" :class="[showMenu ? 'is-active' : '']">
+      <div class="navbar-start">
+        <router-link v-for="navItem in navItems" :key="navItem.to" :to="navItem.to" class="navbar-item" style="padding: 16px;">
+          {{navItem.name}}
+        </router-link>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item no-hover">
+          <div class="buttons">
+            <!-- <a class="button is-primary is-medium">
+              <strong>Join us</strong>
+            </a> -->
+            <a class="button is-primary" @click="modalComponent='login'; showModal=true;">
+              Members Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" :class="[showModal ? 'is-active': '']">
+      <div class="modal-background"></div>
+      <component :is="modalComponent" @close="showModal = false; modalComponent=''"></component>
+    </div>
+  </nav>
+</template>
+
+<script>
+import Login from './Login.vue'
+
+export default {
+  components: {
+    "login": Login,
+  },
+  data: function(){
+    return {
+      showMenu: false,
+      showModal: false,
+      modalComponent: "",
+      navItems: [
+        {
+          name: "Projects",
+          to: "/projects"
+        },
+      ],
+    }
+  }
+}
+</script>
+
+<style>
+.navbar-item:not(.no-hover):hover {
+  background-color: #cfefe6 !important;
+  color: #10b285 !important;
+}
+</style>
