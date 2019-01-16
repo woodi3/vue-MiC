@@ -8,10 +8,10 @@
     <div class="columns">
       <div class="column has-text-left">
         <h4 class="title is-3">Our goal</h4>
-        <p class="is-size-5">
+        <p class="is-size-5 is-size-6-mobile">
           Our journey began almost {{activeYears}} years ago with the purpose
           of engaging minorities in the Computing College at the University of South Carolina.
-          It would be a place where we could connect the students that were struggling
+          The organization would be a place where we could connect the students that were struggling
           and the students that were excelling to prevent discouragement. Taking that a step
           further, we try to connect students and employers to improve hire rates for
           minority students.

@@ -35,17 +35,17 @@ export default {
         {
           icon: ["fas", "fa-tasks", "fa-3x"],
           text: "Assignment pool",
-          subText: "Already completed assignments to guide students"
+          subText: "Already completed assignments to guide students!"
         },
         {
           icon: ["fas", "fa-network-wired", "fa-3x"],
           text: "Network",
-          subText:"An intensive network made from alumna, faculty, and companies"
+          subText:"An intensive network made from alumna, faculty, and companies!"
         },
         {
           icon: ["fas", "fa-user-friends", "fa-3x"],
           text: "Social Circles",
-          subText: "Meet others, engage in events, and develop lasting relationships"
+          subText: "Meet others, engage in events, and develop lasting relationships!"
         }
       ]
     }

@@ -26,9 +26,6 @@
       <div class="navbar-end">
         <div class="navbar-item no-hover">
           <div class="buttons">
-            <!-- <a class="button is-primary is-medium">
-              <strong>Join us</strong>
-            </a> -->
             <a class="button is-primary is-outlined" @click="showModal('login')">
               Members Login
             </a>
@@ -36,20 +33,14 @@
         </div>
       </div>
     </div>
-    <!-- <div class="modal" :class="[showModal ? 'is-active': '']">
-      <div class="modal-background"></div>
-      <component :is="modalComponent" @close="showModal = false; modalComponent=''"></component>
-    </div> -->
   </nav>
 </template>
 
 <script>
-import Login from './Login.vue'
 import {EventBus} from '@/event-bus.js'
 
 export default {
   components: {
-    "login": Login,
   },
   data: function(){
     return {
@@ -57,6 +48,7 @@ export default {
       modalComponent: "",
       navItems: [
         {
+          // TODO: Create Projects page
           name: "Projects",
           to: "/projects"
         },
